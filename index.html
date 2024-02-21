@@ -5,60 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Selector</title>
-
     <style>
-        /* .box {
-            height: 100px;
-            width: 100px;
-        }
-
-        .box1 {
-            background-color: green;
-        }
-
-        .box2 {
-            background-color: red;
-        } */
-
-        /* .box2{
-            height: 100px;
-            width: 100px;
-            background-color: green;
-        } */
-
-        /* p, .div {
-            height: 100px;
-            width: 100px;
-            background-color: green;
-        } */
-
-        /* *{
-            font-size: 15px;
-            color:blue;
-        }
-
-        h1{
-            font-size: 24px;
-            color: red;
-        } */
-
-        /* .m1.m2.m3{
-            color: blue;
-        } */
-
-        /* #blue{
-            color:blue
-        } */
-
-        /* input[value="Name"]{
-            color:blue
-        } */
-
-        /* [value="Name"]{
-            color:red
-        } */
-
-        /* div p {
+        /* div p{
             color: blue
         } */
 
@@ -66,82 +14,103 @@
             color: blue;
         } */
 
-        p {
-            background-color: bisque;
-            /* text-decoration:line-through; */
-            /* text-align: justify; */
-            text-transform: lowercase;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-wrap: wrap;
-            line-height: 1.6;
-            letter-spacing: 2px;
+        /* div+p {
+            color: blue
+        } */
+
+        /* div~p{
+            color: blue;
+        } */
+
+        /* button{
+            border: none;
+        }
+        button:hover{
+            color:red;
+            transform: scale(2);
+        } */
+
+        /* a:visited{
+            color: red;
         }
 
-        h3{
-            text-shadow: 1px 1px 2px blue;
+        a:active{
+            color: green;
         }
+
+        a:link{
+            color: blue;
+        } */
+
+        /* p::first-line {
+            color: red;
+        }
+
+        p::first-letter {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        div::before {
+            content: "hello"
+        }
+
+        div::after {
+            content: "hello"
+        } */
     </style>
-
-
-    <!-- <link rel="stylesheet" href="./css/style.css"> -->
-
 </head>
 
 <body>
-    <!-- <div class="box box1">
-
+    <!-- <div>
+        <p>Select me</p>
+        <div>
+            <p>Select me</p>
+        </div>
     </div>
-    <br/>
-    <div class="box box2">
-
-    </div> -->
-    <!-- <p>
-
-    </p>
-    <div class=".div">
-
-    </div> -->
-
-    <!-- <h1>
-        hello
-    </h1>
-
-    <div>
-        sjkfjsdldsds
-    </div>
-
-    <p>
-        sdfdsfdssdfsddsdfds
-    </p> -->
+    <p>Don't select me</p>
+    <div>Don't select me</div> -->
 
     <!-- <div>
-        <p class="m1 m2 m3">Select Me</p>
-    </div>
-    <p class="m2">Don't Select Me</p>
-    <div class="m1 m2">Don't Select Me</div>
-    <div class="m3">Don't Select Me</div> -->
-
-    <!-- <input type="text" value="Name" />
-    <input type="email" value="name@email.com"> -->
-
-    <!-- <div>
-        <p>Select Me</p>
-    </div>
-    <div>Don't select me</div>
-    <p>Don't select me</p> -->
-
-    <!-- <div>
-        <p>Select Me</p>
+        <p>Select me</p>
         <section>
-            <p> Don't Select me</p>
+            <p>Don't select me</p>
         </section>
+        <p>Select me</p>
     </div>
-    <div>Don't select me</div>
-    <p>Don't select me</p> -->
+    <p>Don't select me</p>
+    <div>Don't select me </div> -->
 
-    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minimafdsfsdfsdfdsfdsfsdfdsfdsd ipsum dignissimos adipisci laboriosam? Perferendis delectus iusto iure cupiditate magnam minima? Commodi, officiis, ex libero delectus deserunt odit totam repellendus ad provident optio voluptas facilis, unde laborum nam quae. Voluptate architecto suscipit dicta amet unde assumenda ea. Maxime explicabo quibusdam amet facilis aliquid aliquam eum doloremque consequuntur doloribus alias. Laborum ea quaerat, eius ad vitae tempora voluptatem fugiat consectetur totam vel quis tempore magnam fuga natus reprehenderit architecto nam sed cumque cupiditate doloremque accusantium nihil labore? Aliquam rerum eos quis nulla inventore totam, porro eveniet vero quia adipisci tempore tenetur minus?</p> -->
+    <!-- <div>Don't select me</div>
+    <p>Select me</p>
+    <p>Select me</p>
+    <div>
+        <p>Don't select me</p>
+        <div>Don't select me</div>
+        <p>Select me</p>
+        <p>Select me</p>
+    </div>
+    <p>Select me</p>
+    <p>Select me</p> -->
 
-    <h3>Text</h3>
+    <!-- <button>Click me</button> -->
+
+    <!-- <a href="https://www.facebook.com">link1</a> -->
+    <!-- <a href="">link2</a>
+    <a href="">link3</a>
+    <a href="">link4</a>
+    <a href="">link5</a> -->
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis fugit perspiciatis blanditiis hic tempora. Non
+        praesentium ipsa similique in veritatis cum consequuntur veniam! Fugit esse eos autem! Dolorum ducimus ipsa
+        perspiciatis vero quas. Corrupti ipsam ipsum ratione impedit blanditiis sunt vero assumenda laborum ad
+        distinctio maxime esse doloremque magnam ea dolorem labore itaque pariatur explicabo, fuga voluptatem. Ullam
+        veniam perspiciatis itaque distinctio doloremque id cumque suscipit! Commodi consectetur possimus odit, rerum
+        deleniti quas vitae ipsa placeat! Architecto commodi cum alias molestias necessitatibus ea recusandae expedita
+        sapiente. Optio praesentium ullam eos suscipit, aperiam fuga, animi labore id, molestias non exercitationem rem?
+    </p>
+    <hr />
+    <div>H</div>
 </body>
 
 </html>
