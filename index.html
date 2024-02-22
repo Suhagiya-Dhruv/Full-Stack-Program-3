@@ -4,113 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Selector</title>
-    <style>
-        /* div p{
-            color: blue
-        } */
-
-        /* div>p {
-            color: blue;
-        } */
-
-        /* div+p {
-            color: blue
-        } */
-
-        /* div~p{
-            color: blue;
-        } */
-
-        /* button{
-            border: none;
-        }
-        button:hover{
-            color:red;
-            transform: scale(2);
-        } */
-
-        /* a:visited{
-            color: red;
-        }
-
-        a:active{
-            color: green;
-        }
-
-        a:link{
-            color: blue;
-        } */
-
-        /* p::first-line {
-            color: red;
-        }
-
-        p::first-letter {
-            font-size: 36px;
-            font-weight: bold;
-        }
-
-        div::before {
-            content: "hello"
-        }
-
-        div::after {
-            content: "hello"
-        } */
-    </style>
+    <title>Box Model</title>
 </head>
+<style>
+    * {
+        margin: 0
+    }
+
+    div {
+        /* border style is mandatory */
+        /* border-style: solid;
+        border-width: 5px;
+        border-color: red; */
+
+        border: 10px solid red;
+
+        /* round border */
+        /* border-radius: 50%; */
+        /* border-radius: 50px 10px 2px 100px; */
+
+        /* padding-top: 20px;
+        padding-right: 50px;
+        padding-bottom: 50px;
+        padding-left: 100px; */
+
+        /* top, right, bottom, left */
+        /* padding: 20px 50px 50px 100px;  */
+
+        /* with single argument get padding 4 side */
+        /* padding: 20px; */
+
+        /* first is top and bottom, second is left-right */
+        /* padding: 20px 100px; */
+
+        /* first top, second left-right, third bottom */
+        /* padding: 20px 200px 100px; */
+
+        font-size: 16px;
+        padding: 50px;
+        margin: 50px;
+        /* margin-top: 100px;
+        margin-left: 100px; */
+
+        /* margin: 200px 100px 50px; */
+        /* text-align: right; */
+        width: fit-content;
+        aspect-ratio: 1/1;
+    }
+
+    section {
+        border: 10px solid;
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        /* content is fixed but when we give a border width and padding then box size is increase */
+        box-sizing: content-box;
+        /* by default */
+
+        /* how to count the box size 
+
+        box width = content-width + horizontal padding + horizonatal border;
+        box height = content-heigth + vertical padding + vertical border;
+
+
+        content width = content-width
+
+        */
+    }
+
+    main {
+        border: 10px solid;
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        box-sizing: border-box;
+
+        /* how to count the box size 
+
+        content width = content-width - horizontal padding - horizonatal border;
+        content height = content-heigth - vertical padding - vertical border;
+
+        box width = content-width;
+        box height = content-height;
+
+
+        */
+    }
+</style>
 
 <body>
     <!-- <div>
-        <p>Select me</p>
-        <div>
-            <p>Select me</p>
-        </div>
-    </div>
-    <p>Don't select me</p>
-    <div>Don't select me</div> -->
+        Box Model
+    </div> -->
 
-    <!-- <div>
-        <p>Select me</p>
-        <section>
-            <p>Don't select me</p>
-        </section>
-        <p>Select me</p>
-    </div>
-    <p>Don't select me</p>
-    <div>Don't select me </div> -->
+    <section>
+        Content Box
+    </section>
 
-    <!-- <div>Don't select me</div>
-    <p>Select me</p>
-    <p>Select me</p>
-    <div>
-        <p>Don't select me</p>
-        <div>Don't select me</div>
-        <p>Select me</p>
-        <p>Select me</p>
-    </div>
-    <p>Select me</p>
-    <p>Select me</p> -->
-
-    <!-- <button>Click me</button> -->
-
-    <!-- <a href="https://www.facebook.com">link1</a> -->
-    <!-- <a href="">link2</a>
-    <a href="">link3</a>
-    <a href="">link4</a>
-    <a href="">link5</a> -->
-
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis fugit perspiciatis blanditiis hic tempora. Non
-        praesentium ipsa similique in veritatis cum consequuntur veniam! Fugit esse eos autem! Dolorum ducimus ipsa
-        perspiciatis vero quas. Corrupti ipsam ipsum ratione impedit blanditiis sunt vero assumenda laborum ad
-        distinctio maxime esse doloremque magnam ea dolorem labore itaque pariatur explicabo, fuga voluptatem. Ullam
-        veniam perspiciatis itaque distinctio doloremque id cumque suscipit! Commodi consectetur possimus odit, rerum
-        deleniti quas vitae ipsa placeat! Architecto commodi cum alias molestias necessitatibus ea recusandae expedita
-        sapiente. Optio praesentium ullam eos suscipit, aperiam fuga, animi labore id, molestias non exercitationem rem?
-    </p>
-    <hr />
-    <div>H</div>
+    <br />
+    <main>
+        Border Box
+    </main>
 </body>
 
 </html>
