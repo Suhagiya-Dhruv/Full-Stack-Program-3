@@ -4,107 +4,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Model</title>
+    <title>Overflow</title>
 </head>
+
 <style>
     * {
-        margin: 0
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* div {
+        width: 150px;
+        height: 150px;
+        border: 1px solid;
+        background-color: beige;
+    }
+
+    body {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    } */
+
+    .visible {
+        overflow: visible;
+        /* by default overflow is visible */
+    }
+
+    .hidden {
+        overflow: hidden;
+    }
+
+    .scroll {
+        /* overflow-y: scroll; */
+        /* overflow-x: scroll; */
+
+        overflow: scroll;
+    }
+
+    .auto {
+        /* text-wrap: nowrap; */
+        overflow: auto;
+    }
+
+    /* h1{
+        border: 1px solid blue;
+        display: inline;
+    }
+    span{
+        border: 2px solid;
+        display: block;
+    } */
+
+    /* span,
+    h1 {
+        border: 1px solid;
+        width: 200px;
+        height: 200px;
+        margin: 40px 20px;
+        padding: 20px 20px;
+    } */
+
+
+
+    input {
+        width: 500px;
+        height: 28px;
+
+        /* border: none; */
+        /* border-bottom: 10px solid; */
+        border-radius: 50px;
     }
 
     div {
-        /* border style is mandatory */
-        /* border-style: solid;
-        border-width: 5px;
-        border-color: red; */
-
-        border: 10px solid red;
-
-        /* round border */
-        /* border-radius: 50%; */
-        /* border-radius: 50px 10px 2px 100px; */
-
-        /* padding-top: 20px;
-        padding-right: 50px;
-        padding-bottom: 50px;
-        padding-left: 100px; */
-
-        /* top, right, bottom, left */
-        /* padding: 20px 50px 50px 100px;  */
-
-        /* with single argument get padding 4 side */
-        /* padding: 20px; */
-
-        /* first is top and bottom, second is left-right */
-        /* padding: 20px 100px; */
-
-        /* first top, second left-right, third bottom */
-        /* padding: 20px 200px 100px; */
-
-        font-size: 16px;
-        padding: 50px;
-        margin: 50px;
-        /* margin-top: 100px;
-        margin-left: 100px; */
-
-        /* margin: 200px 100px 50px; */
-        /* text-align: right; */
-        width: fit-content;
-        aspect-ratio: 1/1;
+        width: 80px;
+        height: 80px;
+        background-color: aqua;
+        display: inline-block;
+        overflow: auto;
     }
 
-    section {
-        border: 10px solid;
-        width: 200px;
-        height: 200px;
-        padding: 20px;
-        /* content is fixed but when we give a border width and padding then box size is increase */
-        box-sizing: content-box;
-        /* by default */
-
-        /* how to count the box size 
-
-        box width = content-width + horizontal padding + horizonatal border;
-        box height = content-heigth + vertical padding + vertical border;
-
-
-        content width = content-width
-
-        */
+    .span1 {
+        width: 80px;
+        height: 80px;
+        background-color: blue;
+        display: block;
+        margin: 20px 10px 2px;
+        margin-right: 40px;
     }
 
-    main {
-        border: 10px solid;
-        width: 200px;
-        height: 200px;
-        padding: 20px;
-        box-sizing: border-box;
-
-        /* how to count the box size 
-
-        content width = content-width - horizontal padding - horizonatal border;
-        content height = content-heigth - vertical padding - vertical border;
-
-        box width = content-width;
-        box height = content-height;
-
-
-        */
+    .span2 {
+        width: 80px;
+        height: 80px;
+        background-color: blue;
+        display: block;
+        margin-top: 40px;
+        margin-left: 20px;
     }
 </style>
 
 <body>
-    <!-- <div>
-        Box Model
-    </div> -->
+    <!-- <div class="visible">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nemo quae rem necessitatibus ut fugit omnis
+            adipisci possimus! Pariatur deserunt sit impedit corrupti, a excepturi vitae veritatis possimus inventore!
+            Odit id distinctio sunt ut dolorum quaerat sint corporis? Enim tenetur veniam cupiditate eius
+            exercitationem, dolor consequuntur</p>
+    </div>
 
-    <section>
-        Content Box
-    </section>
+    <div class="hidden">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nemo quae rem necessitatibus ut fugit omnis
+            adipisci possimus! Pariatur deserunt sit impedit corrupti, a excepturi vitae veritatis possimus inventore!
+            Odit id distinctio sunt ut dolorum quaerat sint corporis? Enim tenetur veniam cupiditate eius
+            exercitationem, dolor consequuntur</p>
+    </div>
 
+    <div class="scroll">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nemo quae rem necessitatibus ut fugit omnis
+            adipisci possimus! Pariatur deserunt sit impedit corrupti, a excepturi vitae veritatis possimus inventore!
+            Odit id distinctio sunt ut dolorum quaerat sint corporis? Enim tenetur veniam cupiditate eius
+            exercitationem, dolor consequuntur</p>
+    </div>
+
+    <div class="auto">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nemo quae rem necessitatibus ut fugit omnis
+            adipisci possimus! Pariatur deserunt sit impedit corrupti, a excepturi vitae veritatis possimus inventore!
+            Odit id distinctio sunt ut dolorum quaerat sint corporis? Enim tenetur veniam cupiditate eius
+            exercitationem, dolor consequuntur</p> 
+        </div>-->
+
+    <!-- <h1>heelo</h1>
+        <span>Button</span>
+        <button>Button 1</button> -->
+
+    <!-- inline tag block tag -->
+
+    <!-- block tag -->
+    <!-- <h1>H1 tag</h1>
+
+    <button>Span tag</button>
+    <button>Button tag</button> -->
+
+
+
+    <!-- <h1>
+        Block tag
+    </h1>
     <br />
-    <main>
-        Border Box
-    </main>
+
+    <span>Inline tag</span> -->
+
+    <span class="span1">Tag 1</span>
+    <!-- <span class="span2">Tag 2</span> -->
+
+    <!-- <div>Tag 1 Tag 1Tag 1Tag 1Tag 1Tag 1Tag 1Tag 1Tag 1
+    </div> -->
+    <!-- <div>Tag 2</div> -->
 </body>
 
 </html>

@@ -1,13 +1,21 @@
-## Box Model
+## Overflow
 
-https://www.w3schools.com/css/css_boxmodel.asp
-- Content
-- Padding
-- Border
-- Margin
+- visible
+- hidden
+- scroll
+- auto
 
-## Box Sizing
+## Display
 
-https://medium.com/geekculture/whats-the-deal-with-box-sizing-c8840dc7da24
-- content-box
-- border-box 
+- inline
+- block
+- inline-block
+
+| styles     | Inline | Block | Inline-Block |
+| ---------- | ------ | ----- | ------------ |
+| width      | false  | true  | true         |
+| height     | false  | true  | true         |
+| v. margin  | true   | true  | true         |
+| h. margin  | true   | true  | true         |
+| v. padding | true   | true  | true         |
+| h. padding | true   | true  | true         |
