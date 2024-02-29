@@ -1,21 +1,29 @@
-## Overflow
+## Inheritance
 
-- visible
-- hidden
-- scroll
-- auto
+- color
+- font-family
+- font-size
+- font-weight
+- font-style
+- line-height
 
-## Display
+## Units
 
-- inline
-- block
-- inline-block
+**Absolute**
 
-| styles     | Inline | Block | Inline-Block |
-| ---------- | ------ | ----- | ------------ |
-| width      | false  | true  | true         |
-| height     | false  | true  | true         |
-| v. margin  | true   | true  | true         |
-| h. margin  | true   | true  | true         |
-| v. padding | true   | true  | true         |
-| h. padding | true   | true  | true         |
+These units are absolute and do not change with the display size or zoom level. 
+
+- px
+- cm
+- mm
+- inch
+
+**Relative**
+
+These units are relative and it is change with the display size or zoom level and depend on parent.
+
+- rem -> root element -> go to root element and take a font size
+- em -> parent element -> take font size from parent and if not then go to grandparent and take font size
+- vh -> view height
+- vw -> view width
+- %
