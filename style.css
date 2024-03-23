@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+h1 {
+    border: 1px solid;
+    display: inline-block;
+    position: relative;
+    left: 100%;
+    animation: textAnimation 10s linear infinite;
+}
+
+@keyframes textAnimation {
+    0% {
+        left: 80%;
+    }
+
+    20% {
+        left: 60%;
+    }
+
+    40% {
+        left: 40%;
+    }
+
+    60% {
+        left: 20%;
+    }
+
+    80% {
+        left: 0%;
+    }
+
+    99% {
+        left: -20%;
+        display: none;
+    }
+    
+    100% {
+        left: 100%;
+        display: none
+    }
+}
