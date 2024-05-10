@@ -1,101 +1,87 @@
-// var a = 1;
-// var b = false;
-// var c = "1";
-// var d = null;
-// var e = undefined;
-
-
-// console.log(typeof(a))
-// console.log(typeof(b))
-// console.log(typeof(c))
-// console.log(typeof(d))
-// console.log(typeof(e))
-
-
-// var a = {}; // new Object create
-
-// key : value
-
-// var obj = {
-//     a: "A",
-//     b: "B"
-// }
-
-// console.log(a)
-// console.log(b)
-
-// console.log(obj.a)
-
-// var c = "b"
-// console.log(obj[c])
-
-// var d = "Name";
-// console.log(obj)
-
-// obj.c = "C";
-// obj.b = "B1"
-
-// obj.c = "C1"
-// obj[d] = "D"
-
-// delete obj.a;
-// key : value ???
-
-// console.log(obj)
-
-/*
-{
-    b : "B1",
-    c: "C1"
-    name : "D"
-}
-*/
-
-// var obj1 = {
-//     firstName : "John",
-//     lastName : "John",
-//     address: {
-//         city:"Surat",
-//         pincode : 968978,
-//         subAddress:{
-//             city: "Tapi"
-//         }
-//     }
-// }
-
-// obj1.address.city = "Amareli"
-
-
-// console.log(obj1)
-
-// console.log(typeof({}))
-// console.log(typeof([]))
-
-// Array
-
-// var a = [1, 2, 3]; // 1D Array
-
-// a[20] = 10;
-
-// console.log(a[2]);
-
-
-// var b = [1, 2, [3, 4, 5], 6, 7]; // 2D Array
-
-// console.log(b[2][2]);
-
 // Method Array
 
 // var b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // console.log(b);
 
-// b.pop();
 // b.push(11);
-// b.shift();
+// b.pop();
+
 // b.unshift(50);
+// b.shift();
 
 // console.log(b.length);
+
+// var c = [11,12,13,14,15].concat(b);
+// console.log(c);
+
+// var d1 = b.join(); // string return
+// console.log(d1)
+
+// var d2 = b.join(""); // string return
+// console.log(d2)
+
+// var d3 = b.join("-"); // string return
+// console.log(d3)
+
+
+// var b1 = ["A", "B", "C", "D", "E", "F"];
+
+// var e = b1.indexOf("E");
+// console.log(e);
+
+
+
+// Function
+// function run(){ // create a function
+//     console.log("Hello")
+//     return "Hi"
+// }
+
+// run() // Function call
+// run()
+
+// console.log(typeof(run)) // type of the function is function
+
+// DRY -> Don't Repeat yourself
+
+
+// console.log(run())
+
+// var re = run();
+// console.log(re)
+
+
+// function sum(a, b) { // argument // callback function
+//     return a + b;
+// }
+
+// var b = sum(50, 58) // parameter
+
+// console.log(b)
+
+// var b1 = sum(10,50);
+
+// console.log(b1);
+
+// Method call
+
+var a = {
+    name: "Fname",
+    fn: function () {
+        console.log("Method Call")
+    }
+}
+
+// console.log(a.name);
+
+a.fn() // Method Call
+
+var b = a.fn;
+
+b(); // Function Call
+
+// this - keyword
 
 
 
