@@ -59,21 +59,21 @@ showThis(); // Output: window or undefined (in strict mode)
 - `var`: Function-scoped variable.
 - `let` and `const`: Block-scoped variables introduced in ES6 (2015).
 
-var
+##### var
    - declaration (**✓**)
-   - assignment/initialzation (**✓**)
-   - re intialization (**✓**)
-   - re declaration (**✓**)
-let (ES6)
+   - assignment/initialization (**✓**)
+   - re-initialization (**✓**)
+   - redeclaration (**✓**)
+##### let (ES6)**
    - declaration (**✓**)
-   - assignment/initialzation (**✓**)
-   - re intialization (**✓**)
-   - re declaration (**✕**)
-const (ES6)
+   - assignment/initialization (**✓**)
+   - re-initialization (**✓**)
+   - redeclaration (**✕**)
+##### const (ES6)
    - declaration (**✕**)
-   - assignment/initialzation (**✓**)
-   - re intialization (**✕**)
-   - re declaration (**✕**)
+   - assignment/initialization (**✓**)
+   - re-initialization (**✕**)
+   - redeclaration (**✕**)
 
 ```javascript
 var a = 15;
