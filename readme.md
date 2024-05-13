@@ -1,64 +1,99 @@
-# Method Array
+# Understanding the `this` Keyword in JavaScript
 
-In JavaScript, arrays come with built-in methods that allow you to manipulate the data stored within them. Here's an overview of some commonly used array methods:
+The `this` keyword in JavaScript refers to the context in which a function is executed. Understanding how `this` works is crucial for writing effective and maintainable JavaScript code. Let's explore its behavior with examples:
 
-1. `push(element)`: Adds one or more elements to the end of an array.
-2. `pop()`: Removes the last element from an array.
-3. `unshift(element)`: Adds one or more elements to the beginning of an array.
-4. `shift()`: Removes the first element from an array.
-5. `concat(array)`: Combines two or more arrays.
-6. `join(separator)`: Joins all elements of an array into a string, with an optional separator.
-7. `indexOf(element)`: Returns the index of the first occurrence of a specified element in an array.
+## Memory Allocation and Code Execution
 
-Example:
+JavaScript allocates memory for variables and executes code sequentially.
+
 ```javascript
-var b = [1, 2, 3, 4, 5];
-b.push(6); // Adds 6 to the end of the array
-b.pop(); // Removes the last element from the array
-b.unshift(0); // Adds 0 to the beginning of the array
-b.shift(); // Removes the first element from the array
-var c = [11,12,13,14,15].concat(b); // Combines two arrays
-var d = b.join("-"); // Converts the array into a string with "-" as separator
-var e = b.indexOf(3); // Returns the index of the element 3 in the array
+var a = 15;
+var b = 20;
+console.log(a); // Output: 15
+b = 50;
+a = a + b;
+console.log(a); // Output: 65
 ```
 
-# Function
+## `this` in Global Scope
 
-Functions in JavaScript are blocks of reusable code that perform a specific task. They can be invoked multiple times with different arguments. Here's how to define and use functions:
+In the global scope, `this` refers to the global object, which is `window` in web browsers.
 
 ```javascript
-function run() {
-    console.log("Hello");
-    return "Hi";
-}
-
-run(); // Function call
-
-var result = run(); // Store the return value of the function
-console.log(result); // Output: Hi
-
-function sum(a, b) {
-    return a + b;
-}
-
-var total = sum(50, 58); // Function call with arguments
-console.log(total); // Output: 108
+var a = 15;
+console.log(window.a); // Output: 15
+console.log(this.a); // Output: 15
+console.log(a); // Output: 15
 ```
 
-# Method Call
+## `this` in Object Methods
 
-In JavaScript, methods are functions that are stored as object properties. They can be called using dot notation or by referencing the property directly. Here's an example:
+In an object method, `this` refers to the object itself.
 
 ```javascript
-var a = {
-    name: "Fname",
-    fn: function () {
-        console.log("Method Call");
+var join = {
+    fname: "John",
+    lname: "Bob",
+    joinName: function () {
+        console.log(this.fname, this.lname);
     }
-};
+}
 
-a.fn(); // Method Call
+join.joinName(); // Output: John Bob
+```
 
-var b = a.fn;
-b(); // Function Call
+## `this` in Functions
+
+In regular functions, `this` refers to the global object. However, in strict mode, it's `undefined`.
+
+```javascript
+function showThis() {
+    console.log(this);
+}
+
+showThis(); // Output: window or undefined (in strict mode)
+```
+
+## Scoping with `var`, `let`, and `const`
+
+- `var`: Function-scoped variable.
+- `let` and `const`: Block-scoped variables introduced in ES6 (2015).
+
+var
+   - declaration (**✓**)
+   - assignment/initialzation (**✓**)
+   - re intialization (**✓**)
+   - re declaration (**✓**)
+let (ES6)
+   - declaration (**✓**)
+   - assignment/initialzation (**✓**)
+   - re intialization (**✓**)
+   - re declaration (**✕**)
+const (ES6)
+   - declaration (**✕**)
+   - assignment/initialzation (**✓**)
+   - re intialization (**✕**)
+   - re declaration (**✕**)
+
+```javascript
+var a = 15;
+a = 20;
+console.log(a); // Output: 20
+
+let b = 15;
+b = 30;
+console.log(b); // Output: 30
+
+const c = 15;
+console.log(c); // Output: 15
+```
+
+## Immediately Invoked Function Expression (IIFE)
+
+An IIFE is a JavaScript function that runs as soon as it is defined.
+
+```javascript
+(function () {
+    console.log("IIFE");
+})();
 ```
