@@ -64,7 +64,7 @@ showThis(); // Output: window or undefined (in strict mode)
    - assignment/initialization (**✓**)
    - re-initialization (**✓**)
    - redeclaration (**✓**)
-##### let (ES6)**
+##### let (ES6) **
    - declaration (**✓**)
    - assignment/initialization (**✓**)
    - re-initialization (**✓**)
