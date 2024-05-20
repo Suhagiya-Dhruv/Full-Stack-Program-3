@@ -1,131 +1,68 @@
-// This keyword
+// Scoping
 
-// JS - Run
+// var a = 10;
 
-// memory allocation
-// code execution
-
-// var a = 15;
-
-// var b = 20;
-
-// console.log(a);
-
-// b = 50;
-
-// a = a + b;
-
-// console.log(a);
-
-// function run (){
-//     var c = 50;
-//     console.log(c);
+// { // block
+//     var a = 20;
+//     console.log(a);
 // }
 
-// run();
-
-// var b = {
-//     a:"A"
-// }
-
-// var a = 15;
-
-// console.log(window.a)
-// console.log(this.a)
 // console.log(a)
 
-// console.log(b.a)
+// let a = 10;
 
-// var join = {
-//     fname: "john",
-//     lname: "bob",
-//     joinName: function () {
-//         console.log(this.fname, join.lname);
-//     }
+// { // block
+//     let a = 20;
+//     console.log(a);
 // }
 
-// join.joinName() // Method Call
+// console.log(a)
 
-// console.log(this.fname, window.lname);
-
-
-// var join = {
-//     fname: "john",
-//     lname: "bob",
-//     joinName: function () {
-//         console.log(this);
-//     }
+// { // block
+//     var a = 20;
+//     console.log(a);
 // }
 
-// var c = join.joinName;
+// console.log(a)
 
-// c(); // Function Call
-
-
-// var fname = "John";
-// var lname = "Bob";
-
-// var obj = {
-//     fname: "Tommy",
-//     lname: "Jai",
-//     joinName: function () {
-//         console.log(this.fname +" "+this.lname);
-//     }
+// { // block
+//     const a = 20;
+//     console.log(a);
 // }
 
+// console.log(a)
 
-// obj.joinName(); //
+// var a = 15; // globle
 
-// var f2 = obj.joinName;
-
-// f2(); //
-
-
-
-// normal function and function expression
-
-// function normal() { // normal function
-
+// function run(){
+//     var b = 15; // functioncal
 // }
-
-// var normal = function (){ // function expression
-
-// }
-
-// normal()
-
-// scoping
-
-// var , let, const
-
-// var a = 15;
-// a = 20;
-
-// var a = 50;
-
+// run()
 // console.log(a);
-
-// ES6 -> 2015
-
-// let and const
-
-// let b = 15;
-// b = 30;
-
 // console.log(b);
 
-// const c = 15;
+// var a = 15; // globle
 
-// console.log(c);
+// function run(){
+//     var b = 15; // functioncal
+//     {
+//         let b = 20;
+//         console.log(b);
+//         a = 30;
+//     }
+//     console.log(a);
+//     console.log(b);
+// }
+// run()
+// console.log(a);
+// console.log(b);
 
-// IIFE Function
 
-// function call(){
-//     console.log("Call")
+// var a = 10;
+// function run(b){ // argument
+//     console.log(b);
+//     console.log(a);
 // }
 
-// call()
+// run(15)
 
-// (function (){
-//     console.log("IIFE")
-// })()

@@ -1,99 +1,57 @@
-# Understanding the `this` Keyword in JavaScript
+# Scoping in JavaScript
 
-The `this` keyword in JavaScript refers to the context in which a function is executed. Understanding how `this` works is crucial for writing effective and maintainable JavaScript code. Let's explore its behavior with examples:
+## Introduction
 
-## Memory Allocation and Code Execution
+Scoping refers to the visibility and accessibility of variables in different parts of your code. Understanding scoping is essential for writing clean and maintainable JavaScript code.
 
-JavaScript allocates memory for variables and executes code sequentially.
+## Global Scope
+
+Variables declared outside of any function or block have global scope. They are accessible from anywhere in your code.
 
 ```javascript
-var a = 15;
-var b = 20;
-console.log(a); // Output: 15
-b = 50;
-a = a + b;
-console.log(a); // Output: 65
+var a = 10;
+console.log(a); // Output: 10
 ```
 
-## `this` in Global Scope
+## Function Scope
 
-In the global scope, `this` refers to the global object, which is `window` in web browsers.
-
-```javascript
-var a = 15;
-console.log(window.a); // Output: 15
-console.log(this.a); // Output: 15
-console.log(a); // Output: 15
-```
-
-## `this` in Object Methods
-
-In an object method, `this` refers to the object itself.
+Variables declared inside a function have function scope. They are accessible only within that function.
 
 ```javascript
-var join = {
-    fname: "John",
-    lname: "Bob",
-    joinName: function () {
-        console.log(this.fname, this.lname);
-    }
+function run() {
+    var b = 15;
+    console.log(b); // Output: 15
 }
 
-join.joinName(); // Output: John Bob
+run();
+console.log(b); // Throws an error: b is not defined
 ```
 
-## `this` in Functions
+## Block Scope
 
-In regular functions, `this` refers to the global object. However, in strict mode, it's `undefined`.
+With the introduction of `let` and `const` in ES6, JavaScript now has block scope. Variables declared with `let` and `const` are accessible only within the block they are defined in.
 
 ```javascript
-function showThis() {
-    console.log(this);
+{
+    let c = 20;
+    console.log(c); // Output: 20
 }
 
-showThis(); // Output: window or undefined (in strict mode)
+console.log(c); // Throws an error: c is not defined
 ```
 
-## Scoping with `var`, `let`, and `const`
+## Lexical Scope
 
-- `var`: Function-scoped variable.
-- `let` and `const`: Block-scoped variables introduced in ES6 (2015).
-
-var
-   - declaration (**✓**)
-   - assignment/initialzation (**✓**)
-   - re intialization (**✓**)
-   - re declaration (**✓**)
-let (ES6)
-   - declaration (**✓**)
-   - assignment/initialzation (**✓**)
-   - re intialization (**✓**)
-   - re declaration (**✕**)
-const (ES6)
-   - declaration (**✕**)
-   - assignment/initialzation (**✓**)
-   - re intialization (**✕**)
-   - re declaration (**✕**)
+JavaScript uses lexical scoping, also known as static scoping. This means that the accessibility of variables is determined by their position in the code.
 
 ```javascript
-var a = 15;
-a = 20;
-console.log(a); // Output: 20
+var a = 10;
 
-let b = 15;
-b = 30;
-console.log(b); // Output: 30
+function run() {
+    console.log(a); // Output: 10
+}
 
-const c = 15;
-console.log(c); // Output: 15
+run();
 ```
 
-## Immediately Invoked Function Expression (IIFE)
-
-An IIFE is a JavaScript function that runs as soon as it is defined.
-
-```javascript
-(function () {
-    console.log("IIFE");
-})();
-```
+In the above example, `run()` can access variable `a` because `run()` is lexically within the same scope where `a` is defined.
