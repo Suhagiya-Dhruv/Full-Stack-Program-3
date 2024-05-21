@@ -1,68 +1,101 @@
-// Scoping
+// Hoisting
 
-// var a = 10;
 
-// { // block
-//     var a = 20;
-//     console.log(a);
-// }
+// phase 1 - Memory Creation
+// Phase 2 - Code Execution
 
 // console.log(a)
+// var a = 10;
 
+// console.log(b)
+// var b = 10;
+
+// console.log(b)
+
+// run()
+
+// function run() {
+//     console.log("I am running")
+// }
+
+
+// console.log(a);
 // let a = 10;
 
-// { // block
-//     let a = 20;
-//     console.log(a);
+// console.log(b);
+// const b = 10;
+
+// Arrow functions
+
+// ES6 -> 2015
+
+// const run = () => {
+//     console.log("I am running")
 // }
 
-// console.log(a)
+// run();
 
-// { // block
-//     var a = 20;
-//     console.log(a);
+
+// function vs Arrow function
+
+// function run() {
+//     console.log("I am running")
 // }
 
-// console.log(a)
 
-// { // block
-//     const a = 20;
-//     console.log(a);
+// const run = () => {
+//     console.log("I am running")
 // }
 
-// console.log(a)
+// run();
 
-// var a = 15; // globle
-
-// function run(){
-//     var b = 15; // functioncal
+// function run() {
+//     return 10;
 // }
-// run()
+
+
+// const run = () => 10
+
+// const a = run();
+
 // console.log(a);
+
+
+// const a = 10;
+
+// console.log(a);
+
+// const b = {
+//     a: 20,
+//     b: 30,
+//     c:40
+// }
+
+// b = {} not allow
+
+// b.a = 30
+// b.b = 20
+
+// delete b.b
+
 // console.log(b);
 
-// var a = 15; // globle
 
-// function run(){
-//     var b = 15; // functioncal
-//     {
-//         let b = 20;
-//         console.log(b);
-//         a = 30;
-//     }
-//     console.log(a);
-//     console.log(b);
-// }
-// run()
-// console.log(a);
-// console.log(b);
+// const a = []; // Array
 
+// a = [5] not allow
 
-// var a = 10;
-// function run(b){ // argument
-//     console.log(b);
-//     console.log(a);
-// }
+// a.push(5)
 
-// run(15)
+// const b = [0, 1, 2]
+// a[1] = b
+
+// a.push(b) // [5, [0, 1, 2]]
+
+// a[1][1] = 5;
+
+// console.log(a); // [] -> [5] -> [5, [0,1,2]]
+
+// console.log(b)
+
 
