@@ -1,101 +1,96 @@
-// Hoisting
+// const a = [];
+
+// a.push(10);
+
+// const b = [1, 2, 3];
+
+// a.push(b); // 2D array  [10, [1,2,3]]
+// a[1][1] = 5
+
+// console.log("a -> ", a);
+// console.log("b -> ", b);
+
+// b[1] = 10;
+
+// console.log("a -> ", a);
+// console.log("b -> ", b);
+
+/*
+
+a -> []
 
 
-// phase 1 - Memory Creation
-// Phase 2 - Code Execution
+*/
 
-// console.log(a)
-// var a = 10;
+// [] -> create new an array
+// {} -> create a new object
 
-// console.log(b)
+// const a = [1, 2, 3];
+// b = a;
+// b[1] = 5;
+
+// console.log("a -> ", a); // [1, 2, 3]
+// console.log("a -> ", b); // [1 ,5 ,3]
+
+
 // var b = 10;
 
+// var c = b;
+
+// c = 5;
+
 // console.log(b)
+// console.log(c)
 
-// run()
-
-// function run() {
-//     console.log("I am running")
+// const a = {
+//     a:10
 // }
 
+// console.log(a)
 
-// console.log(a);
-// let a = 10;
+// a.b = 20;
 
-// console.log(b);
-// const b = 10;
+// console.log(a)
 
-// Arrow functions
-
-// ES6 -> 2015
-
-// const run = () => {
-//     console.log("I am running")
+// const a = {
+//     a: 10,
+//     b: 20,
 // }
 
-// run();
+// // const b = a;
 
-
-// function vs Arrow function
-
-// function run() {
-//     console.log("I am running")
-// }
-
-
-// const run = () => {
-//     console.log("I am running")
-// }
-
-// run();
-
-// function run() {
-//     return 10;
-// }
-
-
-// const run = () => 10
-
-// const a = run();
-
-// console.log(a);
-
-
-// const a = 10;
-
-// console.log(a);
+// // b.c = 20;
 
 // const b = {
-//     a: 20,
-//     b: 30,
-//     c:40
+//     a: 10,
+//     b: 20,
 // }
 
-// b = {} not allow
+// const c = a
 
-// b.a = 30
-// b.b = 20
+// delete c.a
 
-// delete b.b
-
-// console.log(b);
-
-
-// const a = []; // Array
-
-// a = [5] not allow
-
-// a.push(5)
-
-// const b = [0, 1, 2]
-// a[1] = b
-
-// a.push(b) // [5, [0, 1, 2]]
-
-// a[1][1] = 5;
-
-// console.log(a); // [] -> [5] -> [5, [0,1,2]]
-
+// // console.log(b.a)
+// console.log(a)
 // console.log(b)
+// console.log(c)
+
+// Reference 
 
 
+// var username = "Hello"
+
+// var a = {
+//     username: "Hi",
+//     run : function (){
+//         console.log(this.username)
+//     }
+// }
+
+// a.run(); // HI
+
+// var b = a.run;
+
+// b()
+
+// console.log(name)
