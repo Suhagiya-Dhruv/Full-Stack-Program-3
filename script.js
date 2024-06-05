@@ -1,96 +1,120 @@
-// const a = [];
+// rest & spread oprator
 
-// a.push(10);
-
-// const b = [1, 2, 3];
-
-// a.push(b); // 2D array  [10, [1,2,3]]
-// a[1][1] = 5
-
-// console.log("a -> ", a);
-// console.log("b -> ", b);
-
-// b[1] = 10;
-
-// console.log("a -> ", a);
-// console.log("b -> ", b);
-
-/*
-
-a -> []
-
-
-*/
-
-// [] -> create new an array
-// {} -> create a new object
-
-// const a = [1, 2, 3];
-// b = a;
-// b[1] = 5;
-
-// console.log("a -> ", a); // [1, 2, 3]
-// console.log("a -> ", b); // [1 ,5 ,3]
-
-
-// var b = 10;
-
-// var c = b;
-
-// c = 5;
-
-// console.log(b)
-// console.log(c)
-
-// const a = {
-//     a:10
+// function run(a, ...b) {
+//     console.log(a, ...b);
 // }
 
-// console.log(a)
+// run(5, 2, "Hi", true)
 
-// a.b = 20;
+// const a = [1, 2, 3, 4, 5, 6, 7];
 
-// console.log(a)
+// const [b, c, ...d] = a;
+
+// console.log(b, c, ...d)
 
 // const a = {
-//     a: 10,
-//     b: 20,
+//     name: "a",
+//     fname: "b",
+//     lname: "c",
+//     address: "surat",
+//     pincode: 9878987
 // }
 
-// // const b = a;
+// const pincode = a.pincode;
+// const name = a.name;
 
-// // b.c = 20;
+// const { pincode, name, fname, lname, addrss } = a
+
+
+// console.log(name, pincode, fname, lname, addrss)
+
+// const a = {
+//     a: "A",
+//     b: "B"
+// }
 
 // const b = {
-//     a: 10,
-//     b: 20,
+//     c: "C",
+//     d: "D"
 // }
 
-// const c = a
+// const c = {
+//     ...a,
+//     ...b
+// }
 
-// delete c.a
-
-// // console.log(b.a)
-// console.log(a)
-// console.log(b)
 // console.log(c)
 
-// Reference 
-
-
-// var username = "Hello"
-
-// var a = {
-//     username: "Hi",
-//     run : function (){
-//         console.log(this.username)
+// const a = {
+//     name: "value",
+//     fname: "fname",
+//     lname: "lname",
+//     address: {
+//         city: "surat",
+//         pincode: "987898"
 //     }
 // }
 
-// a.run(); // HI
+// const b = {
+//     name: "value1",
+//     fname: "fname1",
+//     lname: "lname2",
+//     address: {
+//         ...a.address
+//     }
+// }
 
-// var b = a.run;
+// a.address.city= ""
 
-// b()
+// console.log(a)
+// console.log(b)
 
-// console.log(name)
+// array Method
+
+// push, pop, unshift, shift, join, concat , split
+
+// const a = [1, 2, 3, 4, 5]
+// const b = [6, 7, 8, 9, 10]
+
+// const c = a.concat(b)
+// const c = a.push(...b)
+// const c = [...a, ...b]
+
+// console.log(c)
+
+// map
+
+/*
+1. Return new Array
+2. If you are not return anything then return undefined value
+*/
+
+const a = [1, 2, 3, 4, 5];
+
+// function duplicate(value, index) {
+//     console.log(value, index)
+//     return value*value
+// }
+// const b = a.map(duplicate);
+
+// console.log(b)
+
+// const b = a.map(function (value, index) {
+//     console.log(value, index)
+//     return value*value
+// });
+
+// console.log(b)
+
+// const b = a.map((value, index) => {
+//     console.log(value, index)
+//     return value*value
+// });
+
+// console.log(b)
+
+const b = a.map((value) => value * value);
+
+console.log(b)
+
+// map , filter, reduce, slice, splice
