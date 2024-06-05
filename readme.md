@@ -1,107 +1,76 @@
-### Rest and Spread Operators in JavaScript
+### JavaScript Array Methods: `map`, `filter`, and `reduce`
 
-The rest and spread operators in JavaScript are powerful features for working with arrays and objects. They allow for more flexible and concise code. Let's break down how they work:
+#### `map` Method
 
-#### Rest Operator
+The `map` method is used to create a new array by applying a function to each element of the original array. It does not modify the original array.
 
-The rest operator (`...`) is used to collect all remaining elements into an array. It is typically used in function parameters to handle an indefinite number of arguments or to collect the rest of the elements during destructuring.
+**Key Points:**
+- Returns a new array.
+- The function you pass to `map` is called once for each element in the array, in order.
+- The returned value from the function will be placed in the new array.
 
-**Example with Function Parameters:**
+**Syntax:**
 ```javascript
-function run(a, ...b) {
-    console.log(a);  // first argument
-    console.log(b);  // array of remaining arguments
-}
-
-run(5, 2, "Hi", true);
-// Output: 
-// 5
-// [2, "Hi", true]
+const newArray = array.map((element, index, array) => {
+    // Return transformed element
+});
 ```
-
-**Example with Array Destructuring:**
-```javascript
-const arr = [1, 2, 3, 4, 5, 6, 7];
-const [first, second, ...rest] = arr;
-console.log(first);  // 1
-console.log(second); // 2
-console.log(rest);   // [3, 4, 5, 6, 7]
-```
-
-**Example with Object Destructuring:**
-```javascript
-const obj = {
-    name: "a",
-    fname: "b",
-    lname: "c",
-    address: "surat",
-    pincode: 9878987
-};
-
-const { pincode, name, ...otherDetails } = obj;
-console.log(name);        // "a"
-console.log(pincode);     // 9878987
-console.log(otherDetails); // { fname: "b", lname: "c", address: "surat" }
-```
-
-#### Spread Operator
-
-The spread operator (`...`) is used to spread elements of an iterable (like an array or object) into individual elements. It is commonly used to combine arrays or objects.
-
-**Example with Arrays:**
-```javascript
-const array1 = [1, 2, 3];
-const array2 = [4, 5, 6];
-const combinedArray = [...array1, ...array2];
-console.log(combinedArray); // [1, 2, 3, 4, 5, 6]
-```
-
-**Example with Objects:**
-```javascript
-const obj1 = {
-    a: "A",
-    b: "B"
-};
-
-const obj2 = {
-    c: "C",
-    d: "D"
-};
-
-const combinedObj = {
-    ...obj1,
-    ...obj2
-};
-console.log(combinedObj); // { a: "A", b: "B", c: "C", d: "D" }
-```
-
-### Array Methods
-
-JavaScript arrays come with many built-in methods to manipulate them. Here are a few commonly used ones:
-
-#### Concatenation and Spreading
-
-**Concat:**
-```javascript
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const combined = arr1.concat(arr2);
-console.log(combined); // [1, 2, 3, 4, 5, 6]
-```
-
-**Spread:**
-```javascript
-const combined = [...arr1, ...arr2];
-console.log(combined); // [1, 2, 3, 4, 5, 6]
-```
-
-#### Map
-
-The `map` method creates a new array populated with the results of calling a provided function on every element in the calling array.
 
 **Example:**
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
-const squares = numbers.map(value => value * value);
+const squares = numbers.map(num => num * num);
 console.log(squares); // [1, 4, 9, 16, 25]
 ```
+
+#### `filter` Method
+
+The `filter` method is used to create a new array containing only the elements that pass a certain test defined by a function. It also does not modify the original array.
+
+**Key Points:**
+- Returns a new array with all elements that pass the test implemented by the provided function.
+- The function you pass to `filter` is called once for each element in the array, in order.
+- If the function returns `true`, the element is included in the new array. If it returns `false`, the element is excluded.
+
+**Syntax:**
+```javascript
+const newArray = array.filter((element, index, array) => {
+    // Return true to keep the element, false otherwise
+});
+```
+
+**Example:**
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // [2, 4]
+```
+
+#### `reduce` Method
+
+The `reduce` method is used to apply a function to each element in the array (from left to right) to reduce it to a single value. It is often used for summing values, accumulating results, or combining values in some way.
+
+**Key Points:**
+- Executes a reducer function on each element of the array, resulting in a single output value.
+- The `reduce` method takes two arguments: a reducer function and an optional initial value.
+- The reducer function has four parameters: accumulator, current value, current index, and the array.
+
+**Syntax:**
+```javascript
+const result = array.reduce((accumulator, currentValue, currentIndex, array) => {
+    // Return updated accumulator
+}, initialValue);
+```
+
+**Example:**
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sum); // 15
+```
+
+### Summary
+
+- **`map`**: Transforms each element of an array using a function and returns a new array of the same length.
+- **`filter`**: Tests each element of an array with a function and returns a new array containing only the elements that pass the test.
+- **`reduce`**: Combines all elements of an array into a single value using a function that accumulates a result over each element.

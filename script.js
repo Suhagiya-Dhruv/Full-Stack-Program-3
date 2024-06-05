@@ -1,120 +1,71 @@
-// rest & spread oprator
+// const a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// function run(a, ...b) {
-//     console.log(a, ...b);
+// const newA = a.map((a) => {
+//     return a+10
+// })
+
+// console.log(newA)
+
+
+// const b = 150108;
+
+// if (b % 2 == 1) {
+//     console.log("Odd")
+// } else {
+//     console.log("Even")
 // }
 
-// run(5, 2, "Hi", true)
 
-// const a = [1, 2, 3, 4, 5, 6, 7];
+// filter
 
-// const [b, c, ...d] = a;
+// function filterArray(a) {
+//    return a%2==1;
+// }
+// const newB = a.filter(filterArray)
 
-// console.log(b, c, ...d)
+// console.log(newB)
 
-// const a = {
-//     name: "a",
-//     fname: "b",
-//     lname: "c",
-//     address: "surat",
-//     pincode: 9878987
+// const newB = a.filter(a => a % 2 == 0)
+
+// console.log(newB)
+
+
+// trutly value falsly value
+
+// if(!0){
+//     console.log("0 Value")
 // }
 
-// const pincode = a.pincode;
-// const name = a.name;
-
-// const { pincode, name, fname, lname, addrss } = a
-
-
-// console.log(name, pincode, fname, lname, addrss)
-
-// const a = {
-//     a: "A",
-//     b: "B"
+// if(!false){
+//     console.log("True value")
 // }
 
-// const b = {
-//     c: "C",
-//     d: "D"
+// if(""){
+//     console.log("Empty String")
 // }
 
-// const c = {
-//     ...a,
-//     ...b
+// if([].length){
+//     console.log("Empty Array")
 // }
 
-// console.log(c)
-
-// const a = {
-//     name: "value",
-//     fname: "fname",
-//     lname: "lname",
-//     address: {
-//         city: "surat",
-//         pincode: "987898"
-//     }
+// if(null){
+//     console.log("Null value")
 // }
 
-// const b = {
-//     name: "value1",
-//     fname: "fname1",
-//     lname: "lname2",
-//     address: {
-//         ...a.address
-//     }
+// if(undefined){
+//     console.log("undefined Value")
 // }
 
-// a.address.city= ""
+// Reduce
 
-// console.log(a)
-// console.log(b)
+// const a = [1, 2, 3, 4, 5];
 
-// array Method
-
-// push, pop, unshift, shift, join, concat , split
-
-// const a = [1, 2, 3, 4, 5]
-// const b = [6, 7, 8, 9, 10]
-
-// const c = a.concat(b)
-// const c = a.push(...b)
-// const c = [...a, ...b]
-
-// console.log(c)
-
-// map
-
-/*
-1. Return new Array
-2. If you are not return anything then return undefined value
-*/
-
-const a = [1, 2, 3, 4, 5];
-
-// function duplicate(value, index) {
-//     console.log(value, index)
-//     return value*value
+// function sum(accumelater, currentvalue) {
+//     console.log(accumelater, currentvalue)
+//     return accumelater -currentvalue
 // }
-// const b = a.map(duplicate);
+// const sumValue = a.reduce(sum, 15)
 
-// console.log(b)
+// console.log(sumValue)
 
-// const b = a.map(function (value, index) {
-//     console.log(value, index)
-//     return value*value
-// });
 
-// console.log(b)
-
-// const b = a.map((value, index) => {
-//     console.log(value, index)
-//     return value*value
-// });
-
-// console.log(b)
-
-const b = a.map((value) => value * value);
-
-console.log(b)
-
-// map , filter, reduce, slice, splice
