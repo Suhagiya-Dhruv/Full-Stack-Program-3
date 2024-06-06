@@ -1,71 +1,87 @@
-// const a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const a = [1, 5, 18, 7, 12, 5, 8];
 
-// const newA = a.map((a) => {
-//     return a+10
+// const b = a.map((value) => { return value * 3 });
+
+// console.log(b)
+
+// const c = a.filter((value) => value % 2 == 0)
+
+// console.log(c)
+
+// const d = a.reduce((acc, curr) => {
+//     return acc * curr
 // })
 
-// console.log(newA)
+// console.log(d)
+
+// Slice & Splice
+
+// const a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// const b = a.slice();
+// const b = a.slice(2);
+// const b = a.slice(2, 5);
+// const b = a.slice(-9, -5);
 
 
-// const b = 150108;
+// const b = a.splice();
+// const b = a.splice(2);
+// const b = a.splice(2, 1);
+// const b = a.splice(-9, 5);
+// const b = a.splice(6, 2, 60, 70, 80, 90, 100);
 
-// if (b % 2 == 1) {
-//     console.log("Odd")
-// } else {
-//     console.log("Even")
+// console.log(a);
+// console.log(b);
+
+
+// const a = [1, 5, 18, 7, 12, 5, 51, 46, 84];
+
+// [3, 15, 54, 21, 36, 15, 24]
+// [3, 15, 54, 21, 36, 15]
+
+// const b = a.map(a => a*3)
+// console.log(b)
+
+// const b = [];
+
+// for (let i = 0; i < a.length; i++) {
+//     if (a[i] % 2 == 0) {
+//         b.push(a[i])
+//     }
 // }
 
+// console.log(b)
 
-// filter
+// let ans = 0;
 
-// function filterArray(a) {
-//    return a%2==1;
-// }
-// const newB = a.filter(filterArray)
-
-// console.log(newB)
-
-// const newB = a.filter(a => a % 2 == 0)
-
-// console.log(newB)
-
-
-// trutly value falsly value
-
-// if(!0){
-//     console.log("0 Value")
+// for (let i = 0; i < a.length; i++) {
+//       ans = ans + a[i]
 // }
 
-// if(!false){
-//     console.log("True value")
+// console.log(ans)
+
+
+// shallow copy vs Deep copy
+
+// const a = {
+//     a: 10,
+//     b: 20,
+//     c: {
+//         c1: 11,
+//         c2: 12
+//     }
 // }
 
-// if(""){
-//     console.log("Empty String")
-// }
+// const b = { ...a, c:{...a.c} };
+// const b = JSON.stringify(a) // string
+// const c = JSON.parse(b) // object
 
-// if([].length){
-//     console.log("Empty Array")
-// }
+// JSON.parse(JONS.stringify(a))
 
-// if(null){
-//     console.log("Null value")
-// }
+// c.c.c1 = 15
 
-// if(undefined){
-//     console.log("undefined Value")
-// }
+// console.log(a)
+// console.log(b)
+// console.log(c)
 
-// Reduce
-
-// const a = [1, 2, 3, 4, 5];
-
-// function sum(accumelater, currentvalue) {
-//     console.log(accumelater, currentvalue)
-//     return accumelater -currentvalue
-// }
-// const sumValue = a.reduce(sum, 15)
-
-// console.log(sumValue)
-
-
+// DOM -> Document Object Model
