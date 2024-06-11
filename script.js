@@ -1,34 +1,60 @@
-// DOM -> Document Object Model
+// Event Listener
 
-// query selector
+// const divElement = document.getElementById("div")
 
-// 1. getElelementById -> ID find -> Unique
-// 2. getElelementsByClassName -> Class Find -> Dublicate
-// 3. getElelementsByTagName -> Tag Name -> Dublicate
-// 4. querySelector -> Find single element
-// 5. querySelectorAll -> Find multiple element
+// let count = 0;
+// function clickHandler() { // callback function
+//     console.log("Div Clicked", count++);
+//     if(count === 5){
+//         divElement.removeEventListener("click", clickHandler)
+//     }
+// }
 
-// const div = document.getElementById("div") // element
-// const DivClass = document.getElementsByClassName("classdiv") // array of elements
-// const tags = document.getElementsByTagName("div") // array of elements
+// divElement.addEventListener("click", clickHandler)
 
+// const plusButton = document.getElementById("plus");
+// const minusButton = document.getElementById("minus");
+// const countShow = document.getElementById("count");
 
-// console.log(div)
-// console.log(DivClass)
-// console.log(tags)
+// let count = 0;
+// plusButton.addEventListener("click", function plus(){
+//     count++;
+//     countShow.innerText = "Count : " + count // Count : 0
+// });
 
-// const div = document.querySelector("div")
-// const divall = document.querySelectorAll("div")
-// console.log(divall)
-
-// dom manipulation
-
-// const div = document.getElementById("div")
-
-// div.innerText = "I change the inner text"
-// div.innerHTML = "<h1>div</h1>"
-
-// console.log(div.innerText)
+// minusButton.addEventListener("click", () => {
+//     count--;
+//     countShow.innerText = "Count : " + count
+// });
 
 
-// Event Listenr
+// const countShow = document.getElementById("count");
+
+// let count = 0;
+
+// function plushandler() {
+//     count++;
+//     countShow.innerText = "Count : " + count
+
+// }
+
+// const minushandler = () => {
+//     count--;
+//     countShow.innerText = "Count : " + count
+// }
+
+
+// const button = document.getElementById("button");
+
+// button.addEventListener("dblclick", ()=>{
+    // logic
+    // console.log("Button double clicked")
+// })
+
+document.addEventListener("keypress", (event)=>{ // keyup, keydown, keypress
+    // console.log(event)
+    console.log(event.key)
+    if(event.key === "Enter"){
+        alert("Enter Key Pressed");
+    }
+})
