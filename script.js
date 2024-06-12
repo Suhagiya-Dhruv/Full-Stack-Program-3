@@ -1,60 +1,64 @@
-// Event Listener
+// alert("Alert Box")
+// confirm("Confirm Box")
+// prompt("Prompt Box")
 
-// const divElement = document.getElementById("div")
 
-// let count = 0;
-// function clickHandler() { // callback function
-//     console.log("Div Clicked", count++);
-//     if(count === 5){
-//         divElement.removeEventListener("click", clickHandler)
+// Change Mode Application -> Dark Mode <-> Light 
+
+// let mode = "white";
+
+// const heading = document.getElementById("h1");
+// const body = document.getElementsByTagName("body")[0]
+// const changemodehandler = () => {
+
+//     if (mode === "white") {
+//         heading.classList.remove("white")
+//         heading.classList.add("black")
+//         body.classList.add("bg-black")
+//         body.classList.remove("bg-white")
+//         mode = "black"
+//     } else if (mode === "black") {
+//         heading.classList.remove("black")
+//         heading.classList.add("white")
+//         body.classList.remove("bg-black")
+//         body.classList.add("bg-white")
+//         mode = "white"
 //     }
 // }
 
-// divElement.addEventListener("click", clickHandler)
+// click, dlbclick, keyup, keydown, keypress
 
-// const plusButton = document.getElementById("plus");
-// const minusButton = document.getElementById("minus");
-// const countShow = document.getElementById("count");
+const box = document.getElementById("div")
 
-// let count = 0;
-// plusButton.addEventListener("click", function plus(){
-//     count++;
-//     countShow.innerText = "Count : " + count // Count : 0
-// });
-
-// minusButton.addEventListener("click", () => {
-//     count--;
-//     countShow.innerText = "Count : " + count
-// });
-
-
-// const countShow = document.getElementById("count");
-
-// let count = 0;
-
-// function plushandler() {
-//     count++;
-//     countShow.innerText = "Count : " + count
-
-// }
-
-// const minushandler = () => {
-//     count--;
-//     countShow.innerText = "Count : " + count
-// }
-
-
-// const button = document.getElementById("button");
-
-// button.addEventListener("dblclick", ()=>{
-    // logic
-    // console.log("Button double clicked")
-// })
-
-document.addEventListener("keypress", (event)=>{ // keyup, keydown, keypress
-    // console.log(event)
-    console.log(event.key)
-    if(event.key === "Enter"){
-        alert("Enter Key Pressed");
-    }
+box.addEventListener("mouseenter", () => {
+    console.log("Mouse Enter")
+    //Logic
 })
+
+box.addEventListener("mouseleave", () => {
+    console.log("Mouse Leave")
+    // Logic
+})
+
+box.addEventListener("mousemove", () => {
+    console.log("Mouse Move")
+    //Logic
+})
+
+box.addEventListener("mouseup", () => {
+    console.log("Mouse Up")
+    //Logic
+})
+
+box.addEventListener("mousedown", () => {
+    console.log("Mouse Down")
+    //Logic
+})
+
+
+
+// Rest Button 0
+// Dark mode & white mode
+// -500 to +500 count with mouse
+
+// change
