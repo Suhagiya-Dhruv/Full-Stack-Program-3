@@ -1,64 +1,31 @@
-// alert("Alert Box")
-// confirm("Confirm Box")
-// prompt("Prompt Box")
+const div = document.getElementById("div")
 
+// let count = 0;
 
-// Change Mode Application -> Dark Mode <-> Light 
+function randomNumber() {
+    return (Math.random() * 255).toFixed(0)
+}
+function addBoxHandler() {
 
-// let mode = "white";
+    const box = document.createElement("div"); // Element create
+    box.setAttribute("class", "box"); // Attribute set
+    const r = randomNumber()
+    const g = randomNumber()
+    const b = randomNumber()
+    
+    // const rgb = `background-color: rgb(${r}, ${g}, ${b})`;
+    // box.setAttribute("style", rgb) // inline
 
-// const heading = document.getElementById("h1");
-// const body = document.getElementsByTagName("body")[0]
-// const changemodehandler = () => {
+    const rgb = `rgb(${r}, ${g}, ${b})`;
 
-//     if (mode === "white") {
-//         heading.classList.remove("white")
-//         heading.classList.add("black")
-//         body.classList.add("bg-black")
-//         body.classList.remove("bg-white")
-//         mode = "black"
-//     } else if (mode === "black") {
-//         heading.classList.remove("black")
-//         heading.classList.add("white")
-//         body.classList.remove("bg-black")
-//         body.classList.add("bg-white")
-//         mode = "white"
-//     }
-// }
+    box.style.backgroundColor = rgb
 
-// click, dlbclick, keyup, keydown, keypress
+    // box.innerText = count;
+    // count++;
 
-const box = document.getElementById("div")
+    div.appendChild(box) // Element add into html
 
-box.addEventListener("mouseenter", () => {
-    console.log("Mouse Enter")
-    //Logic
-})
+    
+    console.log(rgb)
 
-box.addEventListener("mouseleave", () => {
-    console.log("Mouse Leave")
-    // Logic
-})
-
-box.addEventListener("mousemove", () => {
-    console.log("Mouse Move")
-    //Logic
-})
-
-box.addEventListener("mouseup", () => {
-    console.log("Mouse Up")
-    //Logic
-})
-
-box.addEventListener("mousedown", () => {
-    console.log("Mouse Down")
-    //Logic
-})
-
-
-
-// Rest Button 0
-// Dark mode & white mode
-// -500 to +500 count with mouse
-
-// change
+}
