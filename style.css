@@ -1,19 +1,35 @@
-.main {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    width: 500px;
-    height: 500px;
-    border: 1px solid red;
-    overflow: auto;
+
+h2{
+    position: absolute;
 }
 
-.box {
-    width: 100%;
-    height: 20%;
-    margin: 10px 0;
+.a{
+    top: 20%;
+    left: 30%;
+}
+
+.b{
+    top: 30%;
+    left: 60%;
+}
+
+.c{
+    top: 10%;
+    left: 55%;
+}
+
+.d{
+    top: 50%;
+    left: 30%;
+}
+
+.e{
+    top: 70%;
+    left: 30%;
 }

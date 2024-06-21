@@ -1,31 +1,42 @@
-const div = document.getElementById("div")
+const div = document.getElementById('text');
 
-// let count = 0;
+const alph = "ABCDEFGHIJKLMNOPQSTUVWXYZ";
 
-function randomNumber() {
-    return (Math.random() * 255).toFixed(0)
-}
-function addBoxHandler() {
 
-    const box = document.createElement("div"); // Element create
-    box.setAttribute("class", "box"); // Attribute set
-    const r = randomNumber()
-    const g = randomNumber()
-    const b = randomNumber()
-    
-    // const rgb = `background-color: rgb(${r}, ${g}, ${b})`;
-    // box.setAttribute("style", rgb) // inline
+function createNewElement(){
+    const h2 = document.createElement('h2');
+    h2.style.position = "absolute",
+    h2.style.top = `${Math.random()*95}%`;
+    h2.style.left = `${Math.random()*95}%`;
 
-    const rgb = `rgb(${r}, ${g}, ${b})`;
+    h2.innerText = alph.charAt(Math.floor(Math.random()*26))
 
-    box.style.backgroundColor = rgb
+    div.appendChild(h2);
 
-    // box.innerText = count;
-    // count++;
-
-    div.appendChild(box) // Element add into html
-
-    
-    console.log(rgb)
 
 }
+
+function clickhandler(event) {
+
+    let found = 1;
+
+    for (let i = 0; i < div.children.length; i++) {
+        if (div.children[i].innerText.toLowerCase() === event.key) {
+            console.log(event.key, "Found")
+            div.children[i].remove()
+            createNewElement()
+            found = 0;
+        }
+    }
+
+    if(found === 1){
+        createNewElement()
+        createNewElement()
+    }
+
+    if(div.children.length > 15){
+        alert("Game over")
+    }
+
+}
+document.addEventListener("keyup", clickhandler)
