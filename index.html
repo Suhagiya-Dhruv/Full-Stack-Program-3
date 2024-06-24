@@ -1,23 +1,25 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Event Lister</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-
-    <h1>Typing Game</h1>
-
-    <div id="text">
-        <h2 class="a">A</h2>
-        <h2 class="b">B</h2>
-        <h2 class="c">C</h2>
-        <h2 class="d">D</h2>
-        <h2 class="e">E</h2>
+    <div class="main">
+        <input type="text" id="text" placeholder="Enter Item name" value=""/>
+        <button id="addItem" onclick="itemAdd()">Add Item</button>
     </div>
-    <script src="./script.js"></script>
+    <div class="main_list" id="main_list">
+       
+
+    </div>
 </body>
+
+<script src="script.js"></script>
 
 </html>

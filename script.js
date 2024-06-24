@@ -1,42 +1,27 @@
-const div = document.getElementById('text');
-
-const alph = "ABCDEFGHIJKLMNOPQSTUVWXYZ";
-
-
-function createNewElement(){
-    const h2 = document.createElement('h2');
-    h2.style.position = "absolute",
-    h2.style.top = `${Math.random()*95}%`;
-    h2.style.left = `${Math.random()*95}%`;
-
-    h2.innerText = alph.charAt(Math.floor(Math.random()*26))
-
-    div.appendChild(h2);
+const mainInput = document.getElementById("text");
+const main = document.getElementById("main_list");
 
 
-}
+let value = "";
+mainInput.addEventListener('input', (event) => {
+    value = event.target.value;
+})
 
-function clickhandler(event) {
+function itemAdd(){
+    const label = document.createElement("label");
+    label.setAttribute("class", "list");
 
-    let found = 1;
+    const input = document.createElement("input");
+    input.setAttribute("type", "checkbox");
 
-    for (let i = 0; i < div.children.length; i++) {
-        if (div.children[i].innerText.toLowerCase() === event.key) {
-            console.log(event.key, "Found")
-            div.children[i].remove()
-            createNewElement()
-            found = 0;
-        }
-    }
+    const div = document.createElement("div");
+    div.innerText = value;
 
-    if(found === 1){
-        createNewElement()
-        createNewElement()
-    }
+    label.appendChild(input);
+    label.appendChild(div);
 
-    if(div.children.length > 15){
-        alert("Game over")
-    }
+    main.appendChild(label);
+
+    mainInput.value = ""
 
 }
-document.addEventListener("keyup", clickhandler)
