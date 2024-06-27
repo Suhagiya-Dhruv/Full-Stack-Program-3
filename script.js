@@ -1,61 +1,67 @@
-const mainInput = document.getElementById("text");
-const main = document.getElementById("main_list");
+// const parent = document.getElementById("parent");
+// const child = document.getElementById("child");
+
+// function parentClick(event) {
+//     event.stopPropagation();
+//     console.log("Parent Click", event)
+// }
+
+// function childClick(event) {
+//     event.stopPropagation();
+//     console.log("child Click", event)
+// }
 
 
-let value = "";
-mainInput.addEventListener('input', (event) => {
-    value = event.target.value;
-})
-
-function itemAdd() {
+// function documentClick(event) {
+//     console.log("Document Click", event);
+// }
 
 
-    const label = document.createElement("label");
-    label.setAttribute("class", "list");
+// document.addEventListener("click", documentClick)
+// parent.addEventListener("click", parentClick)
+// child.addEventListener("click", childClick)
 
-    const input = document.createElement("input");
-    input.setAttribute("type", "checkbox");
+/**
+ * Data type - Primitive / Non-Primitive
+ * function - this - method call function call
+ * string , array -> map,  filter, reduce, slice(5,6), splice(5,6)
+ * ES6 - 2015 / let const === ==, arrow function, 
+ * shallow copy (...)reset/spread / Deep copy JSON.stringfy(), JSON.parse()
+ * 
+ * */
 
-    const div = document.createElement("input");
-    div.setAttribute("disabled", "true");
-    div.setAttribute("class", "input");
-    div.style.width = "500px";
-    div.value = value;
+/*
+ * JS -> Web API
+ */
 
-    const edit = document.createElement("button");
-    edit.setAttribute("onclick", "editItem(this)");
-    edit.innerText = "Edit"
-
-    const button = document.createElement("button");
-    button.setAttribute("onclick", "deleteItem(this)");
-    button.innerText = "Delete"
+// setTimeout() //
+// setInterval() //
+// clearTimeout() //
+// clearInterval() //
 
 
-    label.appendChild(input);
-    label.appendChild(div);
-    label.appendChild(edit);
-    label.appendChild(button);
+// console.log("Line 1")
+// const id1 = setTimeout(timeout, 1000)
+// console.log("Line 3")
 
-    main.appendChild(label);
+// const id2 = setTimeout(timeout1, 1000)
 
-    mainInput.value = ""
+let count = 0;
 
-}
+const id = setInterval(timeout, 1000)
 
-function deleteItem(item) {
-    item.parentNode.remove()
-}
-
-function editItem(item) {
-
-    const div = item.parentNode.children[1];
-    const edit = item.parentNode.children[2];
-
-    if (edit.innerText === "Save") {
-        div.setAttribute("disabled", "true")
-        edit.innerText = "Edit";
-    } else {
-        div.removeAttribute("disabled");
-        edit.innerText = "Save"
+function timeout() {
+    console.log("Line", count++);
+    if(count == 5){
+        clearInterval(id)
     }
+    // clearTimeout(id2)
 }
+
+function timeout1() {
+    console.log("Line 4");
+    // clearTimeout(id1)
+}
+
+// console.log(id1, id2)
+
