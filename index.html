@@ -9,9 +9,16 @@
 </head>
 
 <body>
-    <!-- <div id="parent">
-        <div id="child"></div>
-    </div> -->
+    <input type="number" value="0" id="hour"> Hr:
+    <input type="number" value="0" id="min" min="0" max="59"> Min :
+    <input type="number" value="0" id="sec" min="0" max="59"> Sec
+
+    <hr/>
+
+    <h1>Sec : <span id="secValue">0</span></h1>
+
+    <button onclick="startHandler()" id="btn">Start</button>
+
 </body>
 
 <script src="./script.js"></script>

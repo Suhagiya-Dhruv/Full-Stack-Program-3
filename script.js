@@ -1,67 +1,35 @@
-// const parent = document.getElementById("parent");
-// const child = document.getElementById("child");
+// Timer
 
-// function parentClick(event) {
-//     event.stopPropagation();
-//     console.log("Parent Click", event)
-// }
+const secValue = document.getElementById("secValue");
+const btn = document.getElementById('btn');
+let button = 0;
+let id;
+let curr_sec = 0;
 
-// function childClick(event) {
-//     event.stopPropagation();
-//     console.log("child Click", event)
-// }
+function startHandler() {
 
+    let sec = curr_sec || Number(document.getElementById("sec").value);
+    if (button === 0) {
+        secValue.innerText = sec;
 
-// function documentClick(event) {
-//     console.log("Document Click", event);
-// }
+        if (sec != 0) {
+            btn.innerText = "Stop"
+            id = setInterval(() => {
+                secValue.innerText = --sec;
+                curr_sec = sec;
+                if (sec == 0) {
+                    clearInterval(id)
+                    button = 0;
+                    btn.innerText = "Start"
+                }
+            }, 1000)
 
-
-// document.addEventListener("click", documentClick)
-// parent.addEventListener("click", parentClick)
-// child.addEventListener("click", childClick)
-
-/**
- * Data type - Primitive / Non-Primitive
- * function - this - method call function call
- * string , array -> map,  filter, reduce, slice(5,6), splice(5,6)
- * ES6 - 2015 / let const === ==, arrow function, 
- * shallow copy (...)reset/spread / Deep copy JSON.stringfy(), JSON.parse()
- * 
- * */
-
-/*
- * JS -> Web API
- */
-
-// setTimeout() //
-// setInterval() //
-// clearTimeout() //
-// clearInterval() //
-
-
-// console.log("Line 1")
-// const id1 = setTimeout(timeout, 1000)
-// console.log("Line 3")
-
-// const id2 = setTimeout(timeout1, 1000)
-
-let count = 0;
-
-const id = setInterval(timeout, 1000)
-
-function timeout() {
-    console.log("Line", count++);
-    if(count == 5){
+            button = 1;
+        }
+    } else {
         clearInterval(id)
+        btn.innerText = "Start"
+        button = 0;
     }
-    // clearTimeout(id2)
+
 }
-
-function timeout1() {
-    console.log("Line 4");
-    // clearTimeout(id1)
-}
-
-// console.log(id1, id2)
-
