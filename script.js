@@ -1,54 +1,35 @@
-// Promise
+// Timer
 
-// pending
-// resolve // fullfiled
-// reject
+const secValue = document.getElementById("secValue");
+const btn = document.getElementById('btn');
+let button = 0;
+let id;
+let curr_sec = 0;
 
+function startHandler() {
 
-// function apiHit(res, rej) {
-// rej()
-// res()
-//     setTimeout(() => {
-//         res("123")
-//     },2000)
+    let sec = curr_sec || Number(document.getElementById("sec").value);
+    if (button === 0) {
+        secValue.innerText = sec;
 
-// rej()
-// }
+        if (sec != 0) {
+            btn.innerText = "Stop"
+            id = setInterval(() => {
+                secValue.innerText = --sec;
+                curr_sec = sec;
+                if (sec == 0) {
+                    clearInterval(id)
+                    button = 0;
+                    btn.innerText = "Start"
+                }
+            }, 1000)
 
-// const data = new Promise(apiHit);
+            button = 1;
+        }
+    } else {
+        clearInterval(id)
+        btn.innerText = "Start"
+        button = 0;
+    }
 
-// data.then((data) => {
-//     console.log("Promise resolve", data)
-// }).catch(() => {
-//     console.log("Promise Rejected")
-// })
-
-
-const card = document.getElementById("card");
-const data = fetch("https://fakestoreapi.com/products") // return Promise
-
-data.then(response => response.json())
-    .then(finalData => {
-        // for (let i = 0; i < finalData.length; i++) {
-        //     console.log(finalData[i].title)
-        // }
-        let tag = ""
-        finalData.forEach(value => {
-            const { id, title, rating, image, price } = value
-
-            tag = tag + `<div class="card">
-            <div class="image">
-                <img src="${image}" alt="" height="90%" width="90%">
-                <div class="rating">${rating.rate}</div>
-            </div>
-            <div>
-                <h2 class="title">${title}</h2>
-                <p class="price">₹ ${price}</p>
-            </div>
-        </div>`
-
-            console.log(tag)
-            card.innerHTML = tag
-        })
-    })
-    .catch(err => console.log(err))
+}
