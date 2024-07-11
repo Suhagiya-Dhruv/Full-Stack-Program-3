@@ -1,58 +1,58 @@
-# Component and Import/Export Guide
+### Props in React
 
-This guide explains how to create a component and handle both default and named exports and imports in JavaScript/React.
+**Props (short for properties)** are a core concept in React that allows components to receive data from their parent components. Props enable components to be dynamic and reusable by providing them with the data they need to render appropriately.
 
-## Creating a Component
+#### Key Concepts of Props:
 
-First, let's create a simple React component.
+1. **Passing Data**:
+   - Props allow you to pass data from a parent component to a child component. This data can be any valid JavaScript value, such as strings, numbers, arrays, objects, or functions.
 
-### ExampleComponent.js
+2. **Read-Only**:
+   - Props are immutable, meaning that a child component cannot modify the props it receives. This ensures a one-way data flow, which helps maintain predictable behavior in the application.
 
-```javascript
+3. **Defining Props**:
+   - Props are defined as attributes on the child component when it is used in the parent component. They are passed as key-value pairs.
+
+4. **Accessing Props**:
+   - In a functional component, props are accessed via the function's parameters.
+   - In a class component, props are accessed via `this.props`.
+
+5. **Default Props**:
+   - You can define default values for props using the `defaultProps` property on a component. This ensures that a component has default values for props that are not provided by the parent.
+
+6. **Prop Types**:
+   - Prop types allow you to specify the type of each prop a component expects, which can help catch errors during development. This is done using the `prop-types` library.
+
+7. **Dynamic Rendering**:
+   - By using props, a single component can render differently based on the values passed to it. This makes components more flexible and reusable across different parts of an application.
+
+#### Example of Props Usage:
+
+Given a simple component that receives and uses props:
+
+```jsx
+// Greeting.js
 import React from 'react';
 
-const ExampleComponent = () => {
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
-  );
+const Greeting = (props) => {
+  return <h1>Hello, {props.name}!</h1>;
 };
 
-export default ExampleComponent;
+export default Greeting;
 ```
 
-## Exporting and Importing Components
+Usage in a parent component:
 
-### Default Export
-
-A default export allows you to export a single value from a file. This can be a class, function, object, or primitive value.
-
-#### ExampleComponent.js
-
-```javascript
+```jsx
+// App.js
 import React from 'react';
-
-const ExampleComponent = () => {
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
-  );
-};
-
-export default ExampleComponent;
-```
-
-#### Importing a Default Export
-
-```javascript
-import ExampleComponent from './ExampleComponent';
+import Greeting from './Greeting';
 
 const App = () => {
   return (
     <div>
-      <ExampleComponent />
+      <Greeting name="Alice" />
+      <Greeting name="Bob" />
     </div>
   );
 };
@@ -60,94 +60,9 @@ const App = () => {
 export default App;
 ```
 
-### Named Export
+In this example:
+- The `Greeting` component receives a prop called `name`.
+- The `App` component passes different values for the `name` prop to the `Greeting` component.
+- Each instance of the `Greeting` component renders differently based on the `name` prop it receives.
 
-A named export allows you to export multiple values from a file.
-
-#### ExampleComponent.js
-
-```javascript
-import React from 'react';
-
-export const ExampleComponent = () => {
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
-  );
-};
-
-export const AnotherComponent = () => {
-  return (
-    <div>
-      <h1>Another Component</h1>
-    </div>
-  );
-};
-```
-
-#### Importing Named Exports
-
-```javascript
-import { ExampleComponent, AnotherComponent } from './ExampleComponent';
-
-const App = () => {
-  return (
-    <div>
-      <ExampleComponent />
-      <AnotherComponent />
-    </div>
-  );
-};
-
-export default App;
-```
-
-### Combining Default and Named Exports
-
-You can combine default and named exports in the same file.
-
-#### ExampleComponent.js
-
-```javascript
-import React from 'react';
-
-const ExampleComponent = () => {
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
-  );
-};
-
-const AnotherComponent = () => {
-  return (
-    <div>
-      <h1>Another Component</h1>
-    </div>
-  );
-};
-
-export { ExampleComponent as default, AnotherComponent };
-```
-
-#### Importing Combined Exports
-
-```javascript
-import ExampleComponent, { AnotherComponent } from './ExampleComponent';
-
-const App = () => {
-  return (
-    <div>
-      <ExampleComponent />
-      <AnotherComponent />
-    </div>
-  );
-};
-
-export default App;
-```
-
-## Conclusion
-
-This guide covered how to create a simple React component and handle both default and named exports and imports. For more advanced usage, refer to the [React documentation](https://reactjs.org/docs/getting-started.html) and the [JavaScript modules documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
+**Task** : [text](https://themewagon.github.io/fruitables/)
