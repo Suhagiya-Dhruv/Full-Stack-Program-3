@@ -66,4 +66,4 @@ const [state, setState] = useState(initialState);
 
 Both types of components can achieve the same functionality, but function components with hooks offer a more concise and readable way to manage state and side effects.
 
-**lifecycle method** : [text](https://medium.com/how-to-react/react-life-cycle-methods-with-examples-2bdb7465332b)
+**lifecycle method** : [(https://medium.com/how-to-react/react-life-cycle-methods-with-examples-2bdb7465332b](https://medium.com/how-to-react/react-life-cycle-methods-with-examples-2bdb7465332b)
