@@ -1,26 +1,66 @@
-import {useState} from 'react'
+// import {useState} from 'react'
 
-const Counter = () => {
+// const Counter = () => {
 
-    let [number, setNumber] = useState(0) // Hooks
-    // let number = 0;
+//     let [number, setNumber] = useState(0) // Hooks
+//     // let number = 0;
 
-    function plusHandler() {
-        setNumber(number+1)
-        // console.log("Plus", number)
+//     function plusHandler() {
+//         setNumber(number+1)
+//         // console.log("Plus", number)
+//     }
+
+//     const minusHandler = () => {
+//         setNumber(number-1)
+//         // console.log("Minus", number)
+//     }
+
+//     return ( // re-render
+//         <>
+//             <h1>{number}</h1>
+//             <button onClick={plusHandler}>Plus</button>
+//             <button onClick={minusHandler}>Minus</button>
+//             {/* <button onClick={resetNumber}>Reset</button> */}
+//         </>
+//     )
+// }
+
+// export default Counter
+
+
+import { useState } from 'react'
+
+const Counter = (porps) => {
+
+    const [number, setNumber] = useState(0) // Hook
+
+    const { inputValue, setInputValue } = porps
+    // const [inputValue, setInputValue] = useState(0) // Hook
+
+    function clickHandler(value) {
+        if (value === '+') {
+
+            setNumber(number + Number(inputValue))
+        } else if (value === '-') {
+            setNumber(number - 1)
+        } else {
+            setNumber(0)
+            setInputValue(0)
+        }
     }
 
-    const minusHandler = () => {
-        setNumber(number-1)
-        // console.log("Minus", number)
-    }
+    // function inputHandler(event) {
+    //     setInputValue(event.target.value);
+    // }
 
-    return ( // re-render
+
+    return (
         <>
+            {/* <input type="number" onChange={inputHandler} value={inputValue} /> */}
             <h1>{number}</h1>
-            <button onClick={plusHandler}>Plus</button>
-            <button onClick={minusHandler}>Minus</button>
-            {/* <button onClick={resetNumber}>Reset</button> */}
+            <button onClick={() => clickHandler('+')}>Plus</button>
+            <button onClick={() => clickHandler('-')}>Minus</button>
+            <button onClick={() => clickHandler()}>Reset</button>
         </>
     )
 }
