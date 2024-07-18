@@ -30,6 +30,22 @@
 
 import { useState } from 'react'
 
+
+const data = [
+    {
+        name: "plus",
+        value: "+"
+    },
+    {
+        name: "minus",
+        value: "-"
+    },
+    {
+        name: "reset",
+        value: ""
+    }
+]
+
 const Counter = (porps) => {
 
     const [number, setNumber] = useState(0) // Hook
@@ -58,9 +74,15 @@ const Counter = (porps) => {
         <>
             {/* <input type="number" onChange={inputHandler} value={inputValue} /> */}
             <h1>{number}</h1>
-            <button onClick={() => clickHandler('+')}>Plus</button>
+
+            {data.map((item) => {
+                return(
+                    <button onClick={() => clickHandler(item.value)}>{item.name}</button>
+                )
+            })}
+            {/* <button onClick={() => clickHandler('+')}>Plus</button>
             <button onClick={() => clickHandler('-')}>Minus</button>
-            <button onClick={() => clickHandler()}>Reset</button>
+            <button onClick={() => clickHandler()}>Reset</button> */}
         </>
     )
 }

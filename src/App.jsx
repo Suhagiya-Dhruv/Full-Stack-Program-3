@@ -1,20 +1,13 @@
-import { useState } from 'react';
-import Counter from './LifeCycle/Counter'
-import LifeCycle from './LifeCycle/LifeCycle'
+import Counter from "./LifeCycle/useEffect"
 
 const App = () => {
 
-    const [inputValue, setInputValue] = useState(0)
+    console.log("App Component Re-render");
 
-    function inputHandler(event) {
-        setInputValue(event.target.value);
-    }
 
     return (
         <>
-            <LifeCycle inputHandler={inputHandler} inputValue={inputValue}/>
-            <hr />
-            <Counter inputValue={inputValue} setInputValue={setInputValue}/>
+            <Counter />
         </>
     )
 }
