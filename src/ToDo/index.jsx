@@ -26,12 +26,25 @@ export const Input = (props) => {
     )
 }
 
-export const ListItems = ({ listItem }) => {
+export const ListItems = ({ listItem, setListItem }) => {
+
+    function deleteHandler(value) {
+
+        const filterData = listItem.filter(item => item !== value)
+        setListItem(filterData)
+
+    }
 
     return (
         <div>
             <ul>
-                {listItem.map((value, index) => <li key={index}>{value}</li>)}
+                {listItem.map((value, index) => {
+                    return <div key={index} style={{ display: "flex" }}>
+                        <li >{value}</li>
+                        <button>Edit</button>
+                        <button onClick={() => deleteHandler(value)}>Delete</button>
+                    </div>
+                })}
             </ul>
         </div>
     )
@@ -48,7 +61,7 @@ export const ToDo = () => {
             <h1>To-Do List</h1>
             <Input inputValue={inputValue} setValue={setValue} />
             <Button inputValue={inputValue} setValue={setValue} setListItem={setListItem} listItem={listItem} />
-            <ListItems listItem={listItem} />
+            <ListItems listItem={listItem} setListItem={setListItem} />
         </div>
     )
 }
