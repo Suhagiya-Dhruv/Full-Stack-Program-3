@@ -1,39 +1,35 @@
-import { useEffect, useState } from 'react'
 import './App.css'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { ToDo } from './ToDo'
+import Parent from './Parent'
 
-const data = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'];
+function Navbar() {
+  return (
+    <nav>
+      <ul>
+        <Link to="/"><li>Landing Page</li></Link>
+        <Link to="/Home"><li>Home Page</li></Link>
+        <Link to="/todo"><li>To-Do List</li></Link>
+        <Link to="/counter"><li>Counter</li></Link>
+      </ul>
+    </nav>
+  )
+}
 
 function App() { // changes or re-render
 
-  const [value, setValue] = useState(0); // state hook
-  const [value1, setValue1] = useState(0); // state hook
 
-  // console.log(value, setValue); //
-  // useEffect(() => {
-  //   console.log('Without dependencies')
-  // })
-
-  // useEffect(() => {
-  //   console.log('With empty dependencies')
-  // }, [])
-
-  useEffect(() => {
-    console.log('With argument dependencies')
-  }, [value])
-
-
-  function changeValue() {
-    // Logic
-    setValue1(value1 + 1)
-    // value = value + 1;
-    console.log(value1)
-  }
   return ( // re-render
     <>
-      <h1>{value}</h1>
-      <h1>{value1}</h1>
-      <button onClick={() => setValue(value + 1)}>Change IN</button>
-      <button onClick={changeValue}>Change Out</button>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<h1>Landing page</h1>} />
+          <Route path="/Home" element={<h1>Home page</h1>} />
+          <Route path="/todo" element={<ToDo />} />
+          <Route path="/counter" element={<Parent />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

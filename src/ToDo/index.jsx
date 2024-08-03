@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
-export const Button = (props) => {
+export const AddButton = (props) => {
 
     const { clickHandelr } = props;
 
     return (
-        <button onClick={clickHandelr}>Add</button>
+        <Button variant="outlined" onClick={clickHandelr}>Add</Button>
     )
 }
 
@@ -24,7 +26,10 @@ export const Input = (props) => {
     }
 
     return (
-        <input type="text" value={inputValue} placeholder="Enter your text here" onChange={inputValueHandler} onKeyUp={addItemEnter} />
+        <>
+            {/* <input type="text" value={inputValue} placeholder="Enter your text here"  /> */}
+            <TextField type='text' value={inputValue} size='small' id="outlined-basic" variant="outlined" placeholder='Enter text' onChange={inputValueHandler} onKeyUp={addItemEnter} />
+        </>
     )
 }
 
@@ -66,9 +71,9 @@ export const ToDo = () => {
     function clickHandelr() {
         if (isEdit !== -1) {
             const newItemUpdate = listItem.map((value, index) => {
-                if(index === isEdit){
+                if (index === isEdit) {
                     return inputValue;
-                }else{
+                } else {
                     return value;
                 }
             })
@@ -84,7 +89,7 @@ export const ToDo = () => {
         <div>
             <h1>To-Do List</h1>
             <Input inputValue={inputValue} setValue={setValue} clickHandelr={clickHandelr} />
-            <Button inputValue={inputValue} setValue={setValue} setListItem={setListItem} listItem={listItem} clickHandelr={clickHandelr} />
+            <AddButton inputValue={inputValue} setValue={setValue} setListItem={setListItem} listItem={listItem} clickHandelr={clickHandelr} />
             <ListItems listItem={listItem} setListItem={setListItem} setValue={setValue} setIsEdit={setIsEdit} />
         </div>
     )
