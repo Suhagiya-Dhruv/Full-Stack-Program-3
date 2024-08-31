@@ -9,6 +9,25 @@ app.get('/', (req, res) => {
 
 app.get('/products', (req, res) => {
     const data = JSON.parse(fs.readFileSync('./products.json', 'utf-8'));
+
+    if (Object.keys(req.query).length !== 0) {
+        const { name } = req.query;
+
+        // const{pricelt, pricegt} = req.query;
+
+        // console.log(pricegt, pricelt)
+        // if(pricegt && pricelt){
+        //     // 
+        // }else if(pricegt){
+
+        // }else if(pricelt){
+
+        // }
+
+
+        // const ans = data.filter(item => item.title.toUpperCase().includes(name.toUpperCase()))
+        // return res.json(ans);
+    }
     return res.json(data)
 });
 
