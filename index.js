@@ -2,51 +2,33 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 
-// GET
-app.get('/', (req, res) => {
-    return res.send("Server is Running")
-}); // url, function
+// Middlerware
 
-app.get('/products', (req, res) => {
-    const data = JSON.parse(fs.readFileSync('./products.json', 'utf-8'));
+app.use(express.json()); // allow the body
 
-    if (Object.keys(req.query).length !== 0) {
-        const { name } = req.query;
+const data = []; // Database
 
-        // const{pricelt, pricegt} = req.query;
-
-        // console.log(pricegt, pricelt)
-        // if(pricegt && pricelt){
-        //     // 
-        // }else if(pricegt){
-
-        // }else if(pricelt){
-
-        // }
-
-
-        // const ans = data.filter(item => item.title.toUpperCase().includes(name.toUpperCase()))
-        // return res.json(ans);
-    }
-    return res.json(data)
-});
-
-app.get('/products/:productId', (req, res) => {
-    const id = Number(req.params.productId);
-    const data = JSON.parse(fs.readFileSync('./products.json', 'utf-8'));
-    const ans = data.find(item => item.id === id);
-    return res.send(ans)
-
-    // Task : IF Id is not found then show response as a data not found
-});
-
-
-// User Data
 app.get('/user', (req, res) => {
-    return res.send("User Data")
-});
+    res.send(data)
+})
 
+app.get('/user/:id', (req, res) => {
+    // Logic
+    res.send("data")
+})
 
-app.listen(5200, () => {
-    console.log('Server is running on port 5200');
+app.post('/user', (req, res) => {
+
+    const user = data.find(item => item.email === req.body.email || item.phone === req.body.phone);
+
+    if(user){
+        return res.send("User alreday exits");
+    }
+
+    data.push({ ...req.body, id: Date.now() })
+    res.send("User Created")
+})
+
+app.listen(5000, () => {
+    console.log('Server is running on port 5000');
 });
